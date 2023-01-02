@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "136520438552",
+    "project_id": "facebook-clone-ui-e5c97",
+    "storage_bucket": "facebook-clone-ui-e5c97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136520438552:android:e4473b4394f762cb07846d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136520438552-nul241v16ljnci05faacs0bm433sajae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSOnaPJtRfLixTnWBK-RlZSzXwR7tv9ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136520438552-nul241v16ljnci05faacs0bm433sajae.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "136520438552-jl91hg1ud8t1j4h443q2iqqnvhmho2r8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterSample"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
