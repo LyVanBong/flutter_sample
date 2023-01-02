@@ -8,6 +8,7 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter_sample/models/user_model.dart';
 import 'package:flutter_sample/widgets/profile_avatar.dart';
+import 'package:flutter_sample/widgets/responsive.dart';
 
 class CreatePostContainer extends StatelessWidget {
   final User currentUser;
@@ -18,68 +19,77 @@ class CreatePostContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0),
-        color: Colors.white,
-        child: Column(
-          children: [
-            Row(
-              children: [
-                ProfileAvatar(imageUrl: currentUser.imageUrl, isActive: false),
-                const SizedBox(
-                  width: 8,
-                ),
-                const Expanded(
-                  child: TextField(
-                    decoration: InputDecoration.collapsed(
-                        hintText: 'What\'s on your mind?'),
-                  ),
-                ),
-              ],
-            ),
-            const Divider(
-              height: 10,
-              thickness: 0.5,
-            ),
-            SizedBox(
-              height: 40,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+    bool isDesktop = Responsive.isDesktop(context);
+    return Card(
+      margin: EdgeInsets.symmetric(horizontal: isDesktop ? 5.0 : 0.0),
+      elevation: isDesktop ? 1.0 : 0.0,
+      shape: isDesktop
+          ? RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+          : null,
+      child: Container(
+          padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0),
+          color: Colors.white,
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  TextButton.icon(
-                    onPressed: () {
-                      log('Live');
-                    },
-                    icon: const Icon(
-                      Icons.videocam,
-                      color: Colors.red,
-                    ),
-                    label: const Text('Live'),
+                  ProfileAvatar(
+                      imageUrl: currentUser.imageUrl, isActive: false),
+                  const SizedBox(
+                    width: 8,
                   ),
-                  TextButton.icon(
-                    onPressed: () {
-                      log('Photo');
-                    },
-                    icon: const Icon(
-                      Icons.photo_library,
-                      color: Colors.green,
+                  const Expanded(
+                    child: TextField(
+                      decoration: InputDecoration.collapsed(
+                          hintText: 'What\'s on your mind?'),
                     ),
-                    label: const Text('Photo'),
-                  ),
-                  TextButton.icon(
-                    onPressed: () {
-                      log('Room');
-                    },
-                    icon: const Icon(
-                      Icons.video_call,
-                      color: Colors.purpleAccent,
-                    ),
-                    label: const Text('Room'),
                   ),
                 ],
               ),
-            )
-          ],
-        ));
+              const Divider(
+                height: 10,
+                thickness: 0.5,
+              ),
+              SizedBox(
+                height: 40,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextButton.icon(
+                      onPressed: () {
+                        log('Live');
+                      },
+                      icon: const Icon(
+                        Icons.videocam,
+                        color: Colors.red,
+                      ),
+                      label: const Text('Live'),
+                    ),
+                    TextButton.icon(
+                      onPressed: () {
+                        log('Photo');
+                      },
+                      icon: const Icon(
+                        Icons.photo_library,
+                        color: Colors.green,
+                      ),
+                      label: const Text('Photo'),
+                    ),
+                    TextButton.icon(
+                      onPressed: () {
+                        log('Room');
+                      },
+                      icon: const Icon(
+                        Icons.video_call,
+                        color: Colors.purpleAccent,
+                      ),
+                      label: const Text('Room'),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          )),
+    );
   }
 }

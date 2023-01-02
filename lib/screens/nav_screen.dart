@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../data/data.dart';
 import '../widgets/widgets.dart';
 import 'screens.dart';
 
@@ -34,14 +35,27 @@ class _NavScreenState extends State<NavScreen> {
     return DefaultTabController(
         length: _icons.length,
         child: Scaffold(
+          appBar: Responsive.isDesktop(context)
+              ? PreferredSize(
+                  preferredSize: const Size.fromHeight(100.0),
+                  child: CustomAppBar(
+                    currentUser: currentUser,
+                    icons: _icons,
+                    selectedIndex: _selectedIndex,
+                    onTap: (index) => setState(() => _selectedIndex = index),
+                  ),
+                )
+              : null,
           body: IndexedStack(index: _selectedIndex, children: _screens),
-          bottomNavigationBar: Padding(
-            padding: const EdgeInsets.only(bottom: 12.0),
-            child: CustomTabBar(
-                icons: _icons,
-                selectedIdex: _selectedIndex,
-                onTap: (index) => setState(() => _selectedIndex = index)),
-          ),
+          bottomNavigationBar: !Responsive.isDesktop(context)
+              ? Container(
+                  padding: const EdgeInsets.only(bottom: 12.0),
+                  child: CustomTabBar(
+                      icons: _icons,
+                      selectedIdex: _selectedIndex,
+                      onTap: (index) => setState(() => _selectedIndex = index)),
+                )
+              : const SizedBox.shrink(),
         ));
   }
 }

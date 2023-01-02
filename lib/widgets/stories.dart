@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/config/palette.dart';
 import 'package:flutter_sample/widgets/profile_avatar.dart';
+import 'package:flutter_sample/widgets/widgets.dart';
 
 import '../models/models.dart';
 
@@ -21,7 +22,7 @@ class Stories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200.0,
-      color: Colors.white,
+      color: Responsive.isDesktop(context) ? Colors.transparent : Colors.white,
       child: ListView.builder(
           itemCount: 1 + stories.length,
           scrollDirection: Axis.horizontal,
@@ -74,7 +75,15 @@ class _StoryCard extends StatelessWidget {
           width: 110.0,
           decoration: BoxDecoration(
               gradient: Palette.storyGradient,
-              borderRadius: BorderRadius.circular(12.0)),
+              borderRadius: BorderRadius.circular(12.0),
+              boxShadow: Responsive.isDesktop(context)
+                  ? const [
+                      BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(0, 2),
+                          blurRadius: 4.0)
+                    ]
+                  : null),
         ),
         Positioned(
           child: isAddStory
