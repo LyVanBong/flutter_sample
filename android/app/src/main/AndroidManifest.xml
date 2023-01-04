@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.learn.main">
+    package="com.learn.clone.netflix">
    <application
         android:label="flutter_sample"
         android:name="${applicationName}"
