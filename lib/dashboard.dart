@@ -4,6 +4,7 @@ import 'package:flutter_sample/style/colors.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'component/app_bar_Action_item.dart';
+import 'component/paymentDetailList.dart';
 import 'component/side_menu.dart';
 
 class Dashboard extends StatelessWidget {
@@ -37,7 +38,8 @@ class Dashboard extends StatelessWidget {
                   const EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
               child: Column(
                 children: [
-                  AppBarActionItems(),
+                  const AppBarActionItems(),
+                  const PaymentDetailList()
                 ],
               ),
             ),
