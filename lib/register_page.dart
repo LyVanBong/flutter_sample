@@ -70,8 +70,8 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Form(
         key: _formKey,
         child: Padding(
-          padding: const EdgeInsets.only(
-              left: 200, right: 200, top: 100, bottom: 100),
+          padding:
+              const EdgeInsets.only(left: 50, right: 50, top: 100, bottom: 100),
           child: Column(
             children: [
               TextFormField(
