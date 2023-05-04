@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "otpdemo-3081f"
-  }
+    "default": "otp-demo-265c0",
+    "production": "otp-demo-265c0"
+  },
+  "targets": {},
+  "etags": {}
 }
