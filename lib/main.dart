@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/stream_controller_page.dart';
 
 import 'future_page.dart';
 
@@ -47,10 +48,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () => {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => FuturePage()),
+                        MaterialPageRoute(
+                            builder: (context) => const FuturePage()),
                       )
                     },
-                child: Text('Future')),
+                child: const Text('Future')),
+            ElevatedButton(
+                onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const StreamControllerPage()),
+                      )
+                    },
+                child: const Text('StreamController')),
           ],
         ),
       ),
