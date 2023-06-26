@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample/stream_controller_page.dart';
 
 import 'future_page.dart';
+import 'views/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,6 +63,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       )
                     },
                 child: const Text('StreamController')),
+            ElevatedButton(
+                onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()),
+                      )
+                    },
+                child: const Text('Bloc Pattern')),
           ],
         ),
       ),
